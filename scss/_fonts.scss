@@ -1,0 +1,44 @@
+// Replace with CDN loaded things
+@font-face {
+  font-family: 'bt_mono';
+  font-style:   normal;
+  font-weight:  400;
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_regular-webfont.eot');
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_regular-webfont.woff2') format('woff2'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_regular-webfont.woff') format('woff'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_regular-webfont.ttf')  format('truetype'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_regular-webfont.svg#bt_mono_reqular-webfont') format('svg');
+}
+
+@font-face {
+  font-family: 'bt_mono';
+  font-style:   normal;
+  font-weight:  500;
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_medium-webfont.eot');
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_medium-webfont.woff2') format('woff2'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_medium-webfont.woff') format('woff'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_medium-webfont.ttf')  format('truetype'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_medium-webfont.svg#bt_mono_medium-webfont') format('svg');
+}
+
+@font-face {
+  font-family: 'bt_mono';
+  font-style:   normal;
+  font-weight:  600;
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_bold-webfont.eot');
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_bold-webfont.woff2') format('woff2'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_bold-webfont.woff') format('woff'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_bold-webfont.ttf')  format('truetype'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_bold-webfont.svg#bt_mono_bold-webfont') format('svg');
+}
+
+@font-face {
+  font-family: 'bt_mono';
+  font-style:   normal;
+  font-weight:  900;
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_heavy-webfont.eot');
+  src: url('https://assets.braintreegateway.com/fonts/bt_mono_heavy-webfont.woff2') format('woff2'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_heavy-webfont.woff') format('woff'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_heavy-webfont.ttf')  format('truetype'),
+       url('https://assets.braintreegateway.com/fonts/bt_mono_heavy-webfont.svg#bt_mono_heavy-webfont') format('svg');
+}
