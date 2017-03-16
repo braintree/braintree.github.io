@@ -363,7 +363,6 @@ th {
   100% {
     opacity: 0;
     transform: translateY(20px) scale(0.8); } }
-
 * {
   box-sizing: border-box; }
 
@@ -389,25 +388,8 @@ a {
   text-decoration: none;
   z-index: 1; }
   a:hover {
-    color: #1A1919;
-    transition: color 0.24s linear; }
-  a:after {
-    background: #fff;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform 0.24s cubic-bezier(0.65, 0.21, 0.41, 0.87);
-    width: 100%;
-    z-index: -1; }
-  a:hover:after {
-    opacity: 1;
-    transform: scale(1, 1);
-    transform-origin: left center;
-    transition: transform 0.24s cubic-bezier(0.65, 0.21, 0.41, 0.87); }
+    background-color: rgba(255, 255, 255, 0.64);
+    color: #1A1919; }
 
 ::selection {
   background: #fff;
@@ -466,73 +448,27 @@ a {
   width: 125rem; }
 
 .repo {
-  border: 1px solid #000;
-  margin-bottom: 6rem;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  margin-bottom: 2.4rem;
   opacity: 1;
-  transition: transform 0.3s cubic-bezier(0.65, 0.21, 0.41, 0.87), color 0.2s linear; }
+  transform: translateY(0);
+  transition: transform 0.1s cubic-bezier(0.65, 0.21, 0.41, 0.87); }
   .repo:hover {
     color: #fff;
     cursor: pointer;
-    transform: translateY(-10px); }
-    .repo:hover .repo__riser:after {
-      opacity: 1;
-      transform: scale(1, 1);
-      transform-origin: left center;
-      transition: transform 0.24s cubic-bezier(0.65, 0.21, 0.41, 0.87); }
+    transform: translateY(-1px);
+    transition: transform 0.1s cubic-bezier(0.65, 0.21, 0.41, 0.87);
+    border-color: #fff; }
   @media (min-width: 768px) {
     .repo {
-      border: 0;
       padding: 0;
       width: 37.4rem; }
       .repo .repo__content-wrapper {
         background: #1A1919;
         position: relative;
         transition: transform 0.3s cubic-bezier(0.65, 0.21, 0.41, 0.87);
-        z-index: 1; }
-      .repo.repo--android .repo__desc, .repo.repo--ios .repo__desc {
-        margin-bottom: 4rem; }
-      .repo.repo--android .repo__riser, .repo.repo--ios .repo__riser {
-        height: 48.6rem;
-        margin: 0 2rem;
-        padding: 10rem 2rem 4rem;
-        top: 7rem; }
-      .repo.repo--android .repo__content-wrapper, .repo.repo--ios .repo__content-wrapper {
-        background: url("../img/device-ios.svg") center no-repeat;
-        background-size: 30.6rem;
-        height: 64rem;
-        margin: 0 auto;
-        width: 32rem; }
-      .repo.repo--android .repo__stats, .repo.repo--ios .repo__stats {
-        display: block; }
-        .repo.repo--android .repo__stats li, .repo.repo--ios .repo__stats li {
-          display: block;
-          margin-bottom: 1.6rem; }
-      .repo.repo--android .repo__content-wrapper {
-        background: url("../img/device-android.svg") center no-repeat; }
-      .repo.repo--web .repo__content-wrapper {
-        padding: 3rem 1px 0; }
-      .repo.repo--web .repo__riser {
-        padding: 2rem 2.4rem 1.2rem; }
-      .repo.repo--web .repo__content-wrapper {
-        background: url("../img/device-web.svg") 0 0 no-repeat;
-        background-size: 100%;
-        height: 26rem; } }
-
-.repo__riser {
-  position: relative;
-  z-index: 30; }
-  .repo__riser:after {
-    background: #FE4E58;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform 0.24s cubic-bezier(0.65, 0.21, 0.41, 0.87);
-    width: 100%;
-    z-index: -1; }
+        z-index: 1;
+        padding: 1em; } }
 
 .repo__lang {
   background: #fff;
@@ -567,74 +503,17 @@ a {
   .repo__stats li {
     display: inline-block;
     margin-bottom: 0.8rem;
-    padding-left: 3.2rem; }
+    padding-left: 3.2rem;
+    opacity: 0.3;
+    background-size: 24px; }
+  .repo__stats li:hover {
+    opacity: 0.9; }
   .repo__stats li:nth-child(1) {
-    background: url("../img/icon-star.svg") no-repeat left center;
-    background-size: 24px; }
+    background: url("../img/icon-star.svg") no-repeat left center; }
   .repo__stats li:nth-child(2) {
-    background: url("../img/icon-contributors.svg") no-repeat left center;
-    background-size: 24px; }
+    background: url("../img/icon-contributors.svg") no-repeat left center; }
   .repo__stats li:nth-child(3) {
-    background: url("../img/icon-commits.svg") no-repeat left center;
-    background-size: 24px; }
-
-.filter-container {
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  z-index: 40;
-  justify-content: center; }
-
-.filter-container--fixed {
-  position: fixed; }
-
-.filter-container--static {
-  position: static; }
-
-.filter {
-  background: #1A1919;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  box-shadow: 0 1.5rem 1.5rem 0rem rgba(26, 25, 25, 0.2);
-  height: 5.3rem;
-  margin: 0 4rem;
-  overflow: hidden;
-  transition: width 0.3s ease-out, transform 0.3s ease-out, margin ease-out, border-radius ease-out;
-  width: 60%; }
-  .filter .filter__nav {
-    font-size: 1.6rem;
-    margin-top: -2.4rem;
-    padding: 1.6rem;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s; }
-  .filter .filter__arrow {
-    animation: arrowRepeat 1.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-    margin: 0 auto;
-    opacity: 0;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s;
-    visibility: hidden;
-    width: 100%; }
-
-.filter--circled {
-  background: #FE4E58;
-  border-radius: 10rem;
-  height: 7rem;
-  transform: translateY(-8rem);
-  width: 7rem; }
-  .filter--circled .filter__arrow {
-    display: flex;
-    height: 7rem;
-    opacity: 1;
-    text-transform: center;
-    visibility: visible;
-    width: 4.8rem;
-    align-items: center;
-    justify-content: center; }
-  .filter--circled .filter__nav {
-    height: 0;
-    opacity: 0;
-    visibility: hidden; }
+    background: url("../img/icon-commits.svg") no-repeat left center; }
 
 #transition {
   background: #fff;
@@ -693,15 +572,12 @@ a {
   line-height: 1;
   margin-bottom: 2rem;
   width: 76.8rem; }
-
 #repoDetails .repo__row {
   align-items: baseline;
   justify-content: space-between; }
-
 #repoDetails .repo__stats {
   display: block;
   width: 20rem; }
-
 #repoDetails .repo__desc {
   width: 50.6rem; }
   #repoDetails .repo__desc p {
@@ -777,3 +653,5 @@ a {
   padding: 1.6rem 0;
   margin: 0 auto;
   max-width: 1200px; }
+
+/*# sourceMappingURL=style.css.map */

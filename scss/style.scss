@@ -50,30 +50,10 @@ a {
   z-index: 1;
 
   &:hover {
+    background-color: $white-3;
     color: $black;
-    transition: color $time-fast linear;
   }
 
-  &:after {
-    background: $white;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform $time-fast $slow-fast-slow;
-    width: 100%;
-    z-index: -1;
-  }
-
-  &:hover:after {
-    opacity: 1;
-    transform: scale(1,1);
-    transform-origin: left center;
-    transition: transform $time-fast $slow-fast-slow;
-  }
 }
 
 ::selection {
@@ -153,25 +133,21 @@ a {
 }
 
 .repo {
-  border: 1px solid $black-very;
-  margin-bottom: 6rem;
+  border: 1px solid $white-3;
+  margin-bottom: $s-md;
   opacity: 1;
-  transition: transform 0.3s $slow-fast-slow, color 0.2s linear;
+  transform: translateY(0);
+  transition: transform $time-fast $slow-fast-slow;
 
   &:hover {
     color: $white;
     cursor: pointer;
-    transform: translateY(-10px);
-
-    .repo__riser:after {
-      opacity: 1;
-      transform: scale(1,1);
-      transform-origin: left center;
-      transition: transform $time-fast $slow-fast-slow;
-    }
+    transform: translateY(-1px);
+    transition: transform $time-fast $slow-fast-slow;
+    border-color: $white;
   }
+
   @media(min-width: $screen-large) {
-    border: 0;
     padding: 0;
     width: 37.4rem;
 
@@ -180,78 +156,8 @@ a {
       position: relative;
       transition: transform 0.3s $slow-fast-slow;
       z-index: 1;
+      padding: 1em;
     }
-
-    &.repo--android, &.repo--ios {
-      .repo__desc {
-        margin-bottom: $s-lg;
-      }
-
-      .repo__riser {
-        height: 48.6rem;
-        margin: 0 2rem;
-        padding: 10rem 2rem 4rem;
-        top: 7rem;
-      }
-
-      .repo__content-wrapper {
-        background: url('../img/device-ios.svg') center no-repeat;
-        background-size: 30.6rem;
-        height: 64rem;
-        margin: 0 auto;
-        width: 32rem;
-      }
-
-      .repo__stats {
-        display: block;
-
-        li {
-          display: block;
-          margin-bottom: 1.6rem;
-        }
-      }
-    }
-
-    &.repo--android {
-      .repo__content-wrapper {
-        background: url('../img/device-android.svg') center no-repeat;
-      }
-    }
-
-    &.repo--web {
-      .repo__content-wrapper {
-        padding: 3rem 1px 0;
-      }
-
-      .repo__riser {
-        padding: 2rem 2.4rem 1.2rem;
-      }
-
-      .repo__content-wrapper {
-        background: url('../img/device-web.svg') 0 0 no-repeat;
-        background-size: 100%;
-        height: 26rem;
-      }
-    }
-  }
-}
-
-.repo__riser {
-  position: relative;
-  z-index: $z-far;
-
-  &:after {
-    background: $red;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform $time-fast $slow-fast-slow;
-    width: 100%;
-    z-index: -1;
   }
 }
 
@@ -294,104 +200,26 @@ a {
     display: inline-block;
     margin-bottom: $s-xs;
     padding-left: 3.2rem;
+    opacity: 0.3;
+    background-size: 24px;
+  }
+
+  li:hover {
+    opacity: 0.9;
   }
 
   li:nth-child(1) {
     background: url('../img/icon-star.svg') no-repeat left center;
-    background-size: 24px;
   }
 
   li:nth-child(2) {
     background: url('../img/icon-contributors.svg') no-repeat left center;
-    background-size: 24px;
   }
 
   li:nth-child(3) {
     background: url('../img/icon-commits.svg') no-repeat left center;
-    background-size: 24px;
   }
 }
-//--------------------
-// Filter
-//--------------------
-.filter-container {
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  z-index: $z-med;
-
-  justify-content: center;
-}
-
-.filter-container--fixed {
-  position: fixed;
-}
-
-.filter-container--static {
-  position: static;
-}
-
-.filter {
-  background: $black;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  box-shadow: 0 1.5rem 1.5rem 0rem rgba($black,0.2);
-  height: 5.3rem;
-  margin: 0 $s-lg;
-  overflow: hidden;
-  transition: width 0.3s ease-out,
-  transform 0.3s ease-out,
-  margin ease-out,
-  border-radius ease-out;
-  width: 60%;
-
-  .filter__nav {
-    font-size: $font-medium;
-    margin-top: -2.4rem;
-    padding: $s-sm;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s;
-  }
-
-  .filter__arrow {
-    animation: arrowRepeat 1.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-    margin: 0 auto;
-    opacity: 0;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s;
-    visibility: hidden;
-    width: 100%;
-  }
-}
-
-.filter--circled {
-  background: $red;
-  border-radius: 10rem;
-  height: 7rem;
-  transform: translateY(-8rem);
-  width: 7rem;
-
-  .filter__arrow {
-    display: flex;
-    height: 7rem;
-    opacity: 1;
-    text-transform: center;
-    visibility: visible;
-    width: 4.8rem;
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  .filter__nav {
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-//--------------------
-// transition
-//--------------------
 
 #transition {
   background: $white;
