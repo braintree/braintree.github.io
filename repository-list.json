@@ -1,0 +1,30 @@
+{
+  "braintree": [
+    "wrap-promise",
+    "popup-bridge-android",
+    "android-card-form",
+    "credit-card-type",
+    "browser-switch-android",
+    "popup-bridge-ios",
+    "qsagi",
+    "jsdoc-template",
+    "restricted-input",
+    "form-napper",
+    "inject-stylesheet",
+    "iframer",
+    "framebus",
+    "card-validator",
+    "us-bank-account-validator",
+    "manners",
+    "eslint-config",
+    "open_api_parser",
+    "litmus_paper",
+    "big_brother",
+    "curator",
+    "scavro",
+    "activerecord-postgresql-citext",
+    "mallory",
+    "mallorca",
+    "formatter.js"
+  ]
+}

@@ -1,1 +1,3 @@
 .sass-cache
+node_modules
+.github_api_auth
