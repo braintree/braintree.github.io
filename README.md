@@ -22,13 +22,22 @@ This project uses [metalsmith](http://www.metalsmith.io/) to build a single page
     npm install
     ```
 
-5. Run the `build.js` script:
+5. Create a `.github_api_auth` file containing [auth credentials that can be consumed by `node-github`](https://github.com/mikedeboer/node-github#authentication). For example, if using a [personal access token](https://github.com/settings/tokens):
+
+    ```
+    {
+        type: "token",
+        token: "YOUR_PERSONAL_ACCESS_TOKEN",
+    }
+    ```
+
+6. Run the `build.js` script:
 
     ```
     node build.js
     ```
 
-6. View results:
+7. View results:
 
     ```
     open index.html
