@@ -25,9 +25,6 @@
     "metalsmith": "^2.3.0",
     "metalsmith-data-loader": "^1.0.3",
     "metalsmith-in-place": "^2.0.1",
-    "metalsmith-layouts": "^1.8.0",
-    "metalsmith-metadata": "0.0.4",
-    "metalsmith-models": "0.0.3",
     "metalsmith-sass": "^1.4.0",
     "metalsmith-templates": "^0.7.0"
   }

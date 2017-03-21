@@ -1,7 +1,6 @@
 const Metalsmith  = require('metalsmith');
 const inplace = require('metalsmith-in-place');
 const sass  = require('metalsmith-sass');
-const metadata  = require('metalsmith-metadata');
 const GitHubApi = require("github");
 const jsonfile = require("jsonfile");
 
