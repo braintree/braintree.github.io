@@ -34,7 +34,7 @@ async function getRepo(ownerName, repoName) {
   return {
     name: repoResult.data.name,
     description: repoResult.data.description,
-    url: repoResult.data.url,
+    url: repoResult.data.html_url,
     languages: Object.keys(languagesResult.data)
   };
 }

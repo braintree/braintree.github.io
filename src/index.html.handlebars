@@ -45,11 +45,6 @@
   <section class="repo-container" id="sectionRepos">
 
 
-
-
-
-
-
 {{#each repositories}}
 
    <div class="repo repo--web">
@@ -57,7 +52,7 @@
         <div class="repo__riser">
           <h4 class="repo__lang">{{#each this.languages}}{{this}} {{/each}}</h4>
 
-          <h1 class="repo__name">{{this.name}}</h1>
+          <h1 class="repo__name"><a href="{{this.url}}">{{this.name}}</a></h1>
 
           <p class="repo__desc">{{this.description}}</p>
 
