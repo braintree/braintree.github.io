@@ -31,10 +31,10 @@ This project uses [metalsmith](http://www.metalsmith.io/) to build a single page
     }
     ```
 
-6. Run the `build.js` script:
+6. Run the build script:
 
     ```
-    node build.js
+    npm run build
     ```
 
 7. View results:
