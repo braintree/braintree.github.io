@@ -21,10 +21,8 @@
     "litmus_paper",
     "big_brother",
     "curator",
-    "scavro",
     "activerecord-postgresql-citext",
     "mallory",
-    "mallorca",
-    "formatter.js"
+    "mallorca"
   ]
 }
