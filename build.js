@@ -21,15 +21,18 @@ var github = new GitHubApi({
 github.authenticate(jsonfile.readFileSync(githubAuthFile))
 
 async function getRepo(ownerName, repoName) {
-  var repoResult = await github.repos.get({
+  const repoRequest = github.repos.get({
     owner: ownerName,
     repo: repoName
   });
 
-  var languagesResult = await github.repos.getLanguages({
+  const languagesRequest = github.repos.getLanguages({
     owner: ownerName,
     repo: repoName
   });
+
+  const repoResult = await repoRequest;
+  const languagesResult = await languagesRequest;
 
   return {
     name: repoResult.data.name,
