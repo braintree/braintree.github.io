@@ -26,8 +26,8 @@ This project uses [metalsmith](http://www.metalsmith.io/) to build a single page
 
     ```
     {
-        type: "token",
-        token: "YOUR_PERSONAL_ACCESS_TOKEN",
+        "type": "token",
+        "token": "YOUR_PERSONAL_ACCESS_TOKEN"
     }
     ```
 
