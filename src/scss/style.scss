@@ -1,595 +1,144 @@
 @import 'vendor/normalize';
-@import 'variables';
+@import 'fonts';
 
-@keyframes arrowRepeat {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.8);
-  }
+$heading-family: "bt_mono", monospace;
+$body-family: "Avenir Next", "Neue Helvetica W01", "Helvetica Neue", Helvetica, sans-serif;
+$max-width: 65.1875rem;
+$gray: #E6E6E6;
 
-  50% {
-    opacity: 1;
-    transform: translateY(0px) scale(1.2);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-  }
+html {
+  font: 1rem/1.5 $body-family;
 }
 
-// General
-
-* {
-  box-sizing: border-box;
-}
-
-body, html {
-  background-color: $black-very;
-  color: $white-2;
-  font: 10px $heading-family;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-li, ul {
-  font-size: $font-small;
-  list-style: none;
+body {
   margin: 0;
-  padding-left: 0;
 }
 
-p {
-  font-size: $font-medium;
+h1,
+h2,
+h3,
+h4 {
+  font-family: $heading-family;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 a {
-  color: $white-3;
-  position: relative;
   text-decoration: none;
-  z-index: 1;
-
-  &:hover {
-    color: $black;
-    transition: color $time-fast linear;
-  }
-
-  &:after {
-    background: $white;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform $time-fast $slow-fast-slow;
-    width: 100%;
-    z-index: -1;
-  }
-
-  &:hover:after {
-    opacity: 1;
-    transform: scale(1,1);
-    transform-origin: left center;
-    transition: transform $time-fast $slow-fast-slow;
-  }
+  color: black;
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
 }
-
-::selection {
-  background: $white;
-  color: $black;
-}
-//--------------------
-// Header
-//--------------------
 
 .header-main {
-  background: $black-very;
   display: flex;
-  margin: 0 auto 2rem;
-  max-width: 1200px;
-  padding: 4.6rem 0 0;
-  position: relative;
-  z-index: 2;
-
   justify-content: space-between;
+  width: $max-width;
+  margin: 3.625rem auto 0;
 }
 
-.header-main__nav {
-  font-size: $font-small;
-  margin-left: 2rem;
-  text-align: right;
+.hero {
+  width: $max-width;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
 
-  li, a {
-    font-size: 1.8rem;
-    display: inline-block;
+.main__nav {
+  a {
+    margin-left: 1rem;
+    font-family: $heading-family;
+    font-weight: 600;
   }
 }
 
-.intro__canvas {
-  background: $black-very;
-  left: 0;
-  position: absolute;
-  top: 6rem;
-  z-index: 0;
-}
-//--------------------
-// Intro Heading
-//--------------------
-
-.intro__about {
-  height: 90vh;
-  display: flex;
-  margin: 0 auto 2rem;
-  max-width: 1200px;
+.heading--knockout {
+  font-size: 1rem;
+  background: black;
+  color: white;
+  padding: 0.3rem 1rem;
 }
 
-.intro__heading {
-  background: -webkit-linear-gradient(top left, $white 30%, $black 100%);
-  color: $white;
-  font-size: 6rem;
-  width: 80rem;
-  line-height: 1.2;
-  z-index: 2;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-//--------------------
-// Repos
-//--------------------
-
-.repo__heading {
-  color: $white;
-  font-size: 5rem;
-  margin-top: 8rem;
-  text-align: center;
+.feature {
+  background: $gray;
+  padding: 4rem 0;
 }
 
-.repo-container {
-  margin: $s-lg auto;
-  padding: $s-lg;
-  width: 125rem;
+.feature-container {
+  position: relative;
+  width: $max-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 19.0625rem 19.0625rem 19.0625rem;
+  grid-column-gap: 4rem;
+
+  .heading--knockout {
+    position: absolute;
+    top: -6rem;
+  }
+
+  h4 {
+    color: rgba(0,0,0,0.6);
+  }
+
+  h2,
+  h4 {
+    margin: 0;
+    word-break: break-word;
+  }
 }
 
-.repo {
-  border: 1px solid $black-very;
-  margin-bottom: 6rem;
-  opacity: 1;
-  transition: transform 0.3s $slow-fast-slow, color 0.2s linear;
+.feature__item {
+  padding: 2rem;
+  background: white;
+  margin-bottom: 3rem;
+  align-self: center;
 
   &:hover {
-    color: $white;
     cursor: pointer;
-    transform: translateY(-10px);
-
-    .repo__riser:after {
-      opacity: 1;
-      transform: scale(1,1);
-      transform-origin: left center;
-      transition: transform $time-fast $slow-fast-slow;
-    }
-  }
-  @media(min-width: $screen-large) {
-    border: 0;
-    padding: 0;
-    width: 37.4rem;
-
-    .repo__content-wrapper {
-      background: $black;
-      position: relative;
-      transition: transform 0.3s $slow-fast-slow;
-      z-index: 1;
-    }
-
-    &.repo--android, &.repo--ios {
-      .repo__desc {
-        margin-bottom: $s-lg;
-      }
-
-      .repo__riser {
-        height: 48.6rem;
-        margin: 0 2rem;
-        padding: 10rem 2rem 4rem;
-        top: 7rem;
-      }
-
-      .repo__content-wrapper {
-        background: url('../img/device-ios.svg') center no-repeat;
-        background-size: 30.6rem;
-        height: 64rem;
-        margin: 0 auto;
-        width: 32rem;
-      }
-
-      .repo__stats {
-        display: block;
-
-        li {
-          display: block;
-          margin-bottom: 1.6rem;
-        }
-      }
-    }
-
-    &.repo--android {
-      .repo__content-wrapper {
-        background: url('../img/device-android.svg') center no-repeat;
-      }
-    }
-
-    &.repo--web {
-      .repo__content-wrapper {
-        padding: 3rem 1px 0;
-      }
-
-      .repo__riser {
-        padding: 2rem 2.4rem 1.2rem;
-      }
-
-      .repo__content-wrapper {
-        background: url('../img/device-web.svg') 0 0 no-repeat;
-        background-size: 100%;
-        height: 26rem;
-      }
-    }
   }
 }
 
-.repo__riser {
-  position: relative;
-  z-index: $z-far;
-
-  &:after {
-    background: $red;
-    content: ' ';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    transition: transform $time-fast $slow-fast-slow;
-    width: 100%;
-    z-index: -1;
-  }
-}
-
-.repo__lang {
-  background: $white;
-  color: $black;
-  display: inline-block;
-  font-size: $font-xsmall;
-  margin-bottom: $s-sm;
-  margin-top: 0;
-  padding: 0.2rem 0.4rem;
-  text-transform: uppercase;
-}
-
-.repo__name {
-  color: $white;
-  font-size: $font-large;
-  line-height: 1;
-  margin: 0 $s-xs 0 0;
-  word-spacing: -8px;
-}
-
-.repo__desc {
-  margin-bottom: $s-sm;
-  word-spacing: -4px;
-}
-
-.repo__stats {
-  border-top: 1px solid $black;
+.careers {
   display: flex;
-  padding-top: $s-sm;
-
   justify-content: space-between;
-  @media(min-width: $screen-large) {
-    border-top: 0;
-    padding-top: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin-bottom: $s-xs;
-    padding-left: 3.2rem;
-  }
-
-  li:nth-child(1) {
-    background: url('../img/icon-star.svg') no-repeat left center;
-    background-size: 24px;
-  }
-
-  li:nth-child(2) {
-    background: url('../img/icon-contributors.svg') no-repeat left center;
-    background-size: 24px;
-  }
-
-  li:nth-child(3) {
-    background: url('../img/icon-commits.svg') no-repeat left center;
-    background-size: 24px;
-  }
-}
-//--------------------
-// Filter
-//--------------------
-.filter-container {
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  z-index: $z-med;
-
-  justify-content: center;
+  padding: 2rem 0;
+  margin: 0 auto;
+  max-width: $max-width;
+  align-items: center;
 }
 
-.filter-container--fixed {
-  position: fixed;
-}
+footer {
+  background: black;
+  color: white;
+  padding: 2rem 0;
 
-.filter-container--static {
-  position: static;
-}
-
-.filter {
-  background: $black;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  box-shadow: 0 1.5rem 1.5rem 0rem rgba($black,0.2);
-  height: 5.3rem;
-  margin: 0 $s-lg;
-  overflow: hidden;
-  transition: width 0.3s ease-out,
-  transform 0.3s ease-out,
-  margin ease-out,
-  border-radius ease-out;
-  width: 60%;
-
-  .filter__nav {
-    font-size: $font-medium;
-    margin-top: -2.4rem;
-    padding: $s-sm;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s;
-  }
-
-  .filter__arrow {
-    animation: arrowRepeat 1.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-    margin: 0 auto;
-    opacity: 0;
-    text-align: center;
-    transition: opacity 0.2s linear 0.05s;
-    visibility: hidden;
-    width: 100%;
-  }
-}
-
-.filter--circled {
-  background: $red;
-  border-radius: 10rem;
-  height: 7rem;
-  transform: translateY(-8rem);
-  width: 7rem;
-
-  .filter__arrow {
+  .footer__content {
     display: flex;
-    height: 7rem;
-    opacity: 1;
-    text-transform: center;
-    visibility: visible;
-    width: 4.8rem;
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  .filter__nav {
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-//--------------------
-// transition
-//--------------------
-
-#transition {
-  background: $white;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.4s $slow-fast-slow 0.5s;
-  width: 100%;
-  z-index: $z-near;
-
-  &.open {
-    transform: scaleX(1);
-    transform-origin: left center;
-    transition: transform 0.4s $slow-fast-slow 0.5s;
-  }
-}
-//--------------------
-// Buttons
-//--------------------
-
-.button {
-  background: rgba(255,255,255,0.05);
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  display: inline-block;
-  font-size: $font-medium;
-  padding: $s-xs $s-md;
-  text-align: center;
-}
-//--------------------
-// MODAL
-//--------------------
-
-.modal__wrapper {
-  background: $black-very;
-  display: flex;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transform-origin: 0 0;
-  transition: transform 400ms 100ms;
-  width: 100%;
-  z-index: $z-near;
-
-  align-items: center;
-  justify-content: center;
-
-  &.modal__wrapper--hidden {
-    transform: scaleX(0);
-  }
-}
-
-.modal__content {
-  opacity: 1;
-  transition: opacity 300ms;
-
-  &.modal__content--hidden {
-    opacity: 0;
-
-    .modal__close {
-      transform: scale(0);
-    }
-  }
-}
-//--------------------
-// REPO DETAILS
-//--------------------
-
-#repoDetails {
-  .repo__name {
-    color: $white;
-    font-size: $font-xxlarge;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 2rem;
-    width: 76.8rem;
-  }
-
-  .repo__row {
-    align-items: baseline;
     justify-content: space-between;
+    max-width: $max-width;
+    margin: 0 auto;
   }
 
-  .repo__stats {
-    display: block;
-    width: 20rem;
-  }
-
-  .repo__desc {
-    width: 50.6rem;
-
-    p {
-      margin-bottom: 4rem;
-    }
-  }
-}
-//--------------------
-// ABOUT DETAILS
-//--------------------
-
-#about {
-  cursor: pointer;
-}
-
-#aboutDetails {
-  color: $white;
-  height: 100%;
-  width: 100%;
-
-  .about__heading {
-    color: rgba(255,255,255,0.1);
-    font-size: 28.8rem;
-    left: 10rem;
-    line-height: 1;
-    position: absolute;
-    top: -10rem;
-  }
-
-  .about__content {
-    width: 63.6rem;
+  a {
+    color: white;
+    margin-right: 1rem;
   }
 }
 
-.divider {
-  background: $red;
-  height: 2px;
-  margin-right: 2.2rem;
-  margin-top: 1rem;
-  transform: translateY(-4.5rem);
-  width: 11rem;
-}
-
-.content__row {
-  display: flex;
-  height: 100%;
-  margin: 0 auto;
-  width: 76.8rem;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.modal__close {
-  background: $red;
-  border-radius: 4.4rem;
-  cursor: pointer;
-  display: flex;
-  height: 4.4rem;
-  position: absolute;
-  right: 3.2rem;
-  top: 3.2rem;
-  transform: scale(1);
-  transition: transform 300ms 300ms;
-  width: 4.4rem;
-
-  align-items: center;
-  justify-content: center;
-}
-//--------------------
-// Utilities
-//--------------------
-.separator {
-  color: $white-2;
-}
-//--------------------
-// Careers
-//--------------------
-
-.careers__wrapper {
-  padding: 2.4rem 0;
-  text-align: center;
-}
-
-.careers__content {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-.careers__heading {
-  color: $white;
-  font-size: 4.8rem;
-}
-
-.careers__desc {
-  color: $white-2;
-}
-
-//--------------------
-// Footer
-//--------------------
-
-.footer-container {
-  padding: 1.6rem 0;
-  margin: 0 auto;
-  max-width: 1200px;
+.btn--main {
+  border: 2px solid black;
+  padding: 1rem;
+  font-family: $heading-family;
+  font-weight: 600;
 }
