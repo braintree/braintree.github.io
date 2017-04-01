@@ -16,7 +16,6 @@
     "card-validator",
     "us-bank-account-validator",
     "manners",
-    "eslint-config",
     "open_api_parser",
     "litmus_paper",
     "big_brother",

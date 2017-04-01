@@ -76,7 +76,7 @@ a {
   width: $max-width;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 19.0625rem 19.0625rem 19.0625rem;
   grid-column-gap: 4rem;
 
   .heading--knockout {
@@ -84,9 +84,14 @@ a {
     top: -6rem;
   }
 
+  h4 {
+    color: rgba(0,0,0,0.6);
+  }
+
   h2,
   h4 {
     margin: 0;
+    word-break: break-word;
   }
 }
 
@@ -94,6 +99,11 @@ a {
   padding: 2rem;
   background: white;
   margin-bottom: 3rem;
+  align-self: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .careers {
