@@ -1,3 +1,6 @@
+@import 'vendor/normalize';
+@import 'fonts';
+
 $heading-family: "bt_mono", monospace;
 $body-family: "Avenir Next", "Neue Helvetica W01", "Helvetica Neue", Helvetica, sans-serif;
 $max-width: 65.1875rem;
@@ -16,7 +19,7 @@ h2,
 h3,
 h4 {
   font-family: $heading-family;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h1 {
@@ -55,7 +58,7 @@ a {
   a {
     margin-left: 1rem;
     font-family: $heading-family;
-    font-weight: bold;
+    font-weight: 600;
   }
 }
 
@@ -137,5 +140,5 @@ footer {
   border: 2px solid black;
   padding: 1rem;
   font-family: $heading-family;
-  font-weight: bold;
+  font-weight: 600;
 }
