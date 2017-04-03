@@ -1,10 +1,15 @@
 @import 'vendor/normalize';
 @import 'fonts';
+$heading-family: 'bt_mono', monospace;
+$body-family: 'Avenir Next', 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, sans-serif;
+$max-width: 72.4305556%; // 1043px
+$gray: #E6E6E6; // Screen Sizes
+$screen-medium: 65.25rem;
+$screen-small: 768px;
 
-$heading-family: "bt_mono", monospace;
-$body-family: "Avenir Next", "Neue Helvetica W01", "Helvetica Neue", Helvetica, sans-serif;
-$max-width: 65.1875rem;
-$gray: #E6E6E6;
+* {
+  box-sizing: border-box;
+}
 
 html {
   font: 1rem/1.5 $body-family;
@@ -14,20 +19,25 @@ body {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: $heading-family;
   font-weight: 600;
 }
 
 h1 {
   font-size: 3rem;
+
+  @media(max-width: $screen-small) {
+    font-size: 2.125rem;
+  }
 }
 
 h2 {
   font-size: 2rem;
+
+  @media(max-width: $screen-small) {
+    font-size: 1.5rem;
+  }
 }
 
 h3 {
@@ -35,74 +45,102 @@ h3 {
 }
 
 a {
-  text-decoration: none;
-  color: black;
   border-bottom: 1px solid black;
+  color: black;
   padding-bottom: 2px;
+  text-decoration: none;
 }
 
 .header-main {
   display: flex;
   justify-content: space-between;
-  width: $max-width;
   margin: 3.625rem auto 0;
+  width: $max-width;
+  @media(max-width: $screen-small) {
+    margin-top: 2rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
 }
 
 .hero {
-  width: $max-width;
   margin: 0 auto;
   padding: 2rem 0;
+  width: $max-width;
+  @media(max-width: $screen-small) {
+    padding: 2rem;
+    width: 100%;
+  }
 }
 
 .main__nav {
   a {
-    margin-left: 1rem;
     font-family: $heading-family;
     font-weight: 600;
+    margin-left: 1rem;
   }
 }
 
 .heading--knockout {
-  font-size: 1rem;
   background: black;
   color: white;
+  font-size: 1rem;
   padding: 0.3rem 1rem;
 }
 
 .feature {
   background: $gray;
   padding: 4rem 0;
+  @media(max-width: $screen-small) {
+    padding: 2rem 0;
+  }
 }
 
 .feature-container {
+  display: grid;
+  margin: 0 auto;
   position: relative;
   width: $max-width;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 19.0625rem 19.0625rem 19.0625rem;
-  grid-column-gap: 4rem;
+
+  grid-column-gap: 6.1361457%;
+  grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
+  @media($screen-medium) {
+    grid-template-columns: 46% 46%;
+  }
+  @media(max-width: $screen-small) {
+    width: 100%;
+
+    grid-template-columns: 100%;
+  }
 
   .heading--knockout {
     position: absolute;
     top: -6rem;
+
+    @media(max-width: $screen-small) {
+      top: -4rem;
+    }
   }
 
   h4 {
     color: rgba(0,0,0,0.6);
   }
 
-  h2,
-  h4 {
+  h2, h4 {
     margin: 0;
     word-break: break-word;
   }
 }
 
 .feature__item {
-  padding: 2rem;
   background: white;
   margin-bottom: 3rem;
+  padding: 2rem;
+
   align-self: center;
+  @media(max-width: $screen-small) {
+    margin-bottom: 1rem;
+  }
 
   &:hover {
     cursor: pointer;
@@ -110,12 +148,18 @@ a {
 }
 
 .careers {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
   margin: 0 auto;
-  max-width: $max-width;
-  align-items: center;
+  padding: 2rem 0;
+  width: $max-width;
+  @media(max-width: $screen-small) {
+    flex-direction: column;
+    flex-direction: column;
+    padding: 1rem 2rem 2rem 2rem;
+    width: 100%;
+  }
 }
 
 footer {
@@ -126,8 +170,12 @@ footer {
   .footer__content {
     display: flex;
     justify-content: space-between;
-    max-width: $max-width;
     margin: 0 auto;
+    max-width: $max-width;
+    @media(max-width: $screen-small) {
+      padding: 0 2rem;
+      width: 100%;
+    }
   }
 
   a {
@@ -138,7 +186,7 @@ footer {
 
 .btn--main {
   border: 2px solid black;
-  padding: 1rem;
   font-family: $heading-family;
   font-weight: 600;
+  padding: 1rem;
 }

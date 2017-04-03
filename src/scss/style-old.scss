@@ -1,6 +1,5 @@
 @import 'vendor/normalize';
 @import 'variables';
-
 @keyframes arrowRepeat {
   0% {
     opacity: 0;
@@ -17,14 +16,13 @@
     transform: translateY(20px) scale(0.8);
   }
 }
-
 // General
-
 * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   background-color: $black-very;
   color: $white-2;
   font: 10px $heading-family;
@@ -32,7 +30,8 @@ body, html {
   line-height: 1.5;
 }
 
-li, ul {
+li,
+ul {
   font-size: $font-small;
   list-style: none;
   margin: 0;
@@ -92,7 +91,6 @@ a {
   padding: 4.6rem 0 0;
   position: relative;
   z-index: 2;
-
   justify-content: space-between;
 }
 
@@ -101,7 +99,8 @@ a {
   margin-left: 2rem;
   text-align: right;
 
-  li, a {
+  a,
+  li {
     font-size: 1.8rem;
     display: inline-block;
   }
@@ -182,7 +181,8 @@ a {
       z-index: 1;
     }
 
-    &.repo--android, &.repo--ios {
+    &.repo--android,
+    &.repo--ios {
       .repo__desc {
         margin-bottom: $s-lg;
       }
@@ -283,7 +283,6 @@ a {
   border-top: 1px solid $black;
   display: flex;
   padding-top: $s-sm;
-
   justify-content: space-between;
   @media(min-width: $screen-large) {
     border-top: 0;
@@ -314,12 +313,12 @@ a {
 //--------------------
 // Filter
 //--------------------
+
 .filter-container {
   bottom: 0;
   display: flex;
   width: 100%;
   z-index: $z-med;
-
   justify-content: center;
 }
 
@@ -335,14 +334,11 @@ a {
   background: $black;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  box-shadow: 0 1.5rem 1.5rem 0rem rgba($black,0.2);
+  box-shadow: 0 1.5rem 1.5rem 0 rgba($black,0.2);
   height: 5.3rem;
   margin: 0 $s-lg;
   overflow: hidden;
-  transition: width 0.3s ease-out,
-  transform 0.3s ease-out,
-  margin ease-out,
-  border-radius ease-out;
+  transition: width 0.3s ease-out, transform 0.3s ease-out, margin ease-out, border-radius ease-out;
   width: 60%;
 
   .filter__nav {
@@ -378,7 +374,6 @@ a {
     text-transform: center;
     visibility: visible;
     width: 4.8rem;
-
     align-items: center;
     justify-content: center;
   }
@@ -440,7 +435,6 @@ a {
   transition: transform 400ms 100ms;
   width: 100%;
   z-index: $z-near;
-
   align-items: center;
   justify-content: center;
 
@@ -534,7 +528,6 @@ a {
   height: 100%;
   margin: 0 auto;
   width: 76.8rem;
-
   align-items: center;
   justify-content: center;
 }
@@ -551,13 +544,13 @@ a {
   transform: scale(1);
   transition: transform 300ms 300ms;
   width: 4.4rem;
-
   align-items: center;
   justify-content: center;
 }
 //--------------------
 // Utilities
 //--------------------
+
 .separator {
   color: $white-2;
 }
@@ -583,7 +576,6 @@ a {
 .careers__desc {
   color: $white-2;
 }
-
 //--------------------
 // Footer
 //--------------------
