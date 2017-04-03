@@ -19,14 +19,16 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: $heading-family;
   font-weight: 600;
 }
 
 h1 {
   font-size: 3rem;
-
   @media(max-width: $screen-small) {
     font-size: 2.125rem;
   }
@@ -34,7 +36,6 @@ h1 {
 
 h2 {
   font-size: 2rem;
-
   @media(max-width: $screen-small) {
     font-size: 1.5rem;
   }
@@ -98,25 +99,24 @@ a {
 
 .feature-container {
   display: grid;
+  grid-column-gap: 2.25rem; // Use this for safari browsers
+  grid-column-gap: 6.1361457%;
+  grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
   margin: 0 auto;
   position: relative;
   width: $max-width;
 
-  grid-column-gap: 6.1361457%;
-  grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
-  @media($screen-medium) {
+  @media(max-width: $screen-medium) {
     grid-template-columns: 46% 46%;
   }
   @media(max-width: $screen-small) {
     width: 100%;
-
     grid-template-columns: 100%;
   }
 
   .heading--knockout {
     position: absolute;
     top: -6rem;
-
     @media(max-width: $screen-small) {
       top: -4rem;
     }
@@ -126,20 +126,25 @@ a {
     color: rgba(0,0,0,0.6);
   }
 
-  h2, h4 {
+  h2,
+  h4 {
     margin: 0;
     word-break: break-word;
   }
 }
 
 .feature__item {
+  align-self: center;
   background: white;
+  display: inline-block;
   margin-bottom: 3rem;
   padding: 2rem;
-
-  align-self: center;
+  @media($screen-medium) {
+    width: 49%;
+  }
   @media(max-width: $screen-small) {
     margin-bottom: 1rem;
+    width: 100%;
   }
 
   &:hover {
@@ -157,7 +162,7 @@ a {
   @media(max-width: $screen-small) {
     flex-direction: column;
     flex-direction: column;
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 2rem;
     width: 100%;
   }
 }
