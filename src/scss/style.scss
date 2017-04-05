@@ -126,8 +126,13 @@ a {
 
 .feature {
   background: $light-grey;
-  box-shadow: inset -3.75rem -11.25rem 0 0 white;
+  box-shadow: inset -6.75rem -11.25rem 0 0 white;
   padding: 4rem 0;
+
+  @media(max-width: $screen-medium) {
+    box-shadow: inset 0rem -11.25rem 0 0 white;
+  }
+
   @media(max-width: $screen-small) {
     box-shadow: none;
     padding: 2rem 0;
@@ -142,7 +147,7 @@ a {
   margin: 0 auto;
   position: relative;
   width: $max-width;
-  @media(max-width: 90rem) {
+  @media(max-width: $screen-large) {
     grid-template-columns: 46.93192715% 46.93192715%;
   }
   @media(max-width: $screen-small) {
