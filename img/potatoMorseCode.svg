@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="294" height="294" viewBox="0 0 294 294">
+  <g fill="#000000" fill-rule="evenodd">
+    <rect width="10" height="10" y="284" rx="5"/>
+    <rect width="10" height="10" x="94" y="284" rx="5"/>
+    <rect width="24" height="10" x="22" y="284"/>
+    <rect width="24" height="10" x="124" y="284"/>
+    <rect width="24" height="10" x="160" y="284"/>
+    <rect width="24" height="10" x="196" y="284"/>
+    <rect width="24" height="10" x="58" y="284"/>
+    <rect width="24" height="10" x="240" y="284"/>
+    <rect width="10" height="10" x="284" y="284" rx="5"/>
+    <rect width="10" height="10" x="284" transform="rotate(90 289 5)" rx="5"/>
+    <rect width="10" height="10" x="284" y="94" transform="rotate(90 289 99)" rx="5"/>
+    <rect width="24" height="10" x="277" y="29" transform="rotate(90 289 34)"/>
+    <rect width="24" height="10" x="277" y="131" transform="rotate(90 289 136)"/>
+    <rect width="24" height="10" x="277" y="167" transform="rotate(90 289 172)"/>
+    <rect width="24" height="10" x="277" y="203" transform="rotate(90 289 208)"/>
+    <rect width="24" height="10" x="277" y="65" transform="rotate(90 289 70)"/>
+    <rect width="24" height="10" x="277" y="247" transform="rotate(90 289 252)"/>
+    <rect width="10" height="10" x="284" y="284" transform="rotate(90 289 289)" rx="5"/>
+  </g>
+</svg>

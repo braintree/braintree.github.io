@@ -3,7 +3,9 @@
 $heading-family: 'bt_mono', monospace;
 $body-family: 'Avenir Next', 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, sans-serif;
 $max-width: 72.4305556%; // 1043px
-$gray: #E6E6E6; // Screen Sizes
+$light-grey: #E6E6E6;
+$grey: #B3B3B3; // Screen Sizes
+$screen-large: 90rem;
 $screen-medium: 65.25rem;
 $screen-small: 768px;
 
@@ -49,7 +51,34 @@ a {
   border-bottom: 1px solid black;
   color: black;
   padding-bottom: 2px;
+  position: relative;
   text-decoration: none;
+}
+
+.link--knockout {
+  &:hover {
+    color: white;
+  }
+
+  &:after {
+    background: #000;
+    content: ' ';
+    height: 100%;
+    left: -0.5rem;
+    padding: 0.1875rem;
+    position: absolute;
+    top: -0.25rem;
+    transform: scale(0, 1);
+    transform-origin: right center;
+    width: 120%;
+    z-index: -1;
+  }
+
+  &:hover:after {
+    opacity: 1;
+    transform: scale(1,1);
+    transform-origin: left center;
+  }
 }
 
 .header-main {
@@ -66,8 +95,14 @@ a {
 
 .hero {
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem;
   width: $max-width;
+
+  strong {
+    border-bottom: 0.1875rem dashed $grey;
+    font-weight: inherit;
+    padding-bottom: 0.5rem;
+  }
   @media(max-width: $screen-small) {
     padding: 2rem;
     width: 100%;
@@ -90,24 +125,25 @@ a {
 }
 
 .feature {
-  background: $gray;
+  background: $light-grey;
+  box-shadow: inset -3.75rem -11.25rem 0 0 white;
   padding: 4rem 0;
   @media(max-width: $screen-small) {
+    box-shadow: none;
     padding: 2rem 0;
   }
 }
 
 .feature-container {
   display: grid;
-  grid-column-gap: 2.25rem; // Use this for safari browsers
+  grid-column-gap: 2.25rem; // Use this for safari browsers that have old implementation of css grid spec
   grid-column-gap: 6.1361457%;
   grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
   margin: 0 auto;
   position: relative;
   width: $max-width;
-
-  @media(max-width: $screen-medium) {
-    grid-template-columns: 46% 46%;
+  @media(max-width: 90rem) {
+    grid-template-columns: 46.93192715% 46.93192715%;
   }
   @media(max-width: $screen-small) {
     width: 100%;
@@ -136,15 +172,29 @@ a {
 .feature__item {
   align-self: center;
   background: white;
+  border: 0.25rem solid;
+  box-shadow: 0.5rem 0.5rem 0 0 rgba(0,0,0,0.1);
   display: inline-block;
   margin-bottom: 3rem;
   padding: 2rem;
+
+  &:hover {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    transform: translate(0.5rem, 0.5rem);
+  }
   @media($screen-medium) {
     width: 49%;
   }
   @media(max-width: $screen-small) {
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
     margin-bottom: 1rem;
     width: 100%;
+
+    &:hover {
+      transform: none;
+    }
   }
 
   &:hover {
@@ -194,4 +244,9 @@ footer {
   font-family: $heading-family;
   font-weight: 600;
   padding: 1rem;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
 }
