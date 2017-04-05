@@ -70,7 +70,6 @@ a {
     top: -0.25rem;
     transform: scale(0, 1);
     transform-origin: right center;
-    //transition: transform 0.3s, opacity 0.3s;
     width: 120%;
     z-index: -1;
   }
@@ -137,9 +136,9 @@ a {
 
 .feature-container {
   display: grid;
-  grid-column-gap: 2.25rem; // Use this for safari browsers
+  grid-column-gap: 2.25rem; // Use this for safari browsers that have old implementation of css grid spec
   grid-column-gap: 6.1361457%;
-  grid-template-columns: 29.2425695% 29.2425695% 29.2425695%; //grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
+  grid-template-columns: 29.2425695% 29.2425695% 29.2425695%;
   margin: 0 auto;
   position: relative;
   width: $max-width;
