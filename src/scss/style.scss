@@ -182,10 +182,19 @@ a {
   display: inline-block;
   margin-bottom: 3rem;
   padding: 2rem;
+  transition: .1s ease-in-out .1s;
+
+  .item__content {
+    transition: .1s ease-in-out .1s;
+  }
 
   &:hover {
     box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
-    transform: translate(0.5rem, 0.5rem);
+    transform: translate(0.25rem, 0.25rem);
+
+    .item__content {
+      transform: translate(-0.25rem, -0.25rem);
+    }
   }
   @media($screen-medium) {
     width: 49%;
