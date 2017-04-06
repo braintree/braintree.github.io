@@ -181,6 +181,7 @@ a {
   box-shadow: 0.5rem 0.5rem 0 0 rgba(0,0,0,0.1);
   display: inline-block;
   margin-bottom: 3rem;
+  margin-right: 2rem;
   padding: 2rem;
   transition: .1s ease-in-out .1s;
 
@@ -213,6 +214,12 @@ a {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@supports (display: grid) {
+  .feature__item {
+    margin-right: 0;
   }
 }
 
