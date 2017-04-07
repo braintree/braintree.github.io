@@ -249,7 +249,13 @@ footer {
     margin: 0 auto;
     max-width: $max-width;
     @media(max-width: $screen-small) {
-      padding: 0 2rem;
+      text-align: center;
+
+      nav {
+        margin-bottom: 1rem;
+      }
+
+      flex-direction: column;
       width: 100%;
     }
   }
