@@ -4,6 +4,7 @@ $heading-family: 'bt_mono', monospace;
 $body-family: 'AvenirNextLTW01-Regular', 'Avenir Next', 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, sans-serif;
 $max-width: 72.4305556%; // 1043px
 $light-grey: #E6E6E6;
+$dark-grey: #666666;
 $grey: #B3B3B3; // Screen Sizes
 $screen-large: 90rem;
 $screen-medium: 65.25rem;
@@ -230,7 +231,7 @@ a {
 .careers {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
   padding: 2rem 0;
   width: $max-width;
@@ -244,7 +245,7 @@ a {
 
 footer {
   background: black;
-  color: white;
+  color: $dark-grey;
   padding: 2rem 0;
 
   .footer__content {
@@ -265,8 +266,18 @@ footer {
   }
 
   a {
-    color: white;
+    color: $dark-grey;
     margin-right: 1rem;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  .legal a {
+    margin-right: 0;
+    border-bottom: 1px solid;
+    margin: 0 0.25rem;
   }
 }
 
