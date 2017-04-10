@@ -30,8 +30,8 @@
   </g>
   </svg>
       <nav class="main__nav">
-          <a href="https://www.braintreepayments.com/about" id="about" class="link--knockout">About</a>
-          <a href="https://www.braintreepayments.com/careers" id="careers" class="link--knockout">Careers</a>
+          <a target="_blank" href="https://www.braintreepayments.com/about" id="about" class="link--knockout">About</a>
+          <a target="_blank" href="https://www.braintreepayments.com/careers" id="careers" class="link--knockout">Careers</a>
       </nav>
     </header>
 
@@ -44,7 +44,7 @@
             <h3 class="heading--knockout">Projects</h3>
 
             {{#each repositories}}
-              <a class="feature__item" href="{{this.url}}">
+              <a target="_blank" class="feature__item" href="{{this.url}}">
                 <div class="item__content">
                     <h4>
                   {{#each this.languages}}
@@ -62,33 +62,34 @@
 
     <div class="careers">
         <h1>Join the team.</h1>
-        <a class="btn--main" href="https://www.braintreepayments.com/careers">Check out our careers page</a>
+        <a target="_blank" class="btn--main" href="https://www.braintreepayments.com/careers">Check out our careers page</a>
     </div>
 
     <footer>
         <div class="footer__content">
             <nav>
-              <a href="https://www.instagram.com/braintree/">
+              <a target="_blank" href="https://www.instagram.com/braintree/">
                 <img src="img/icon-instagram.svg" alt="">
               </a>
-              <a href="https://twitter.com/braintree">
+              <a target="_blank" href="https://twitter.com/braintree">
                 <img src="img/icon-twitter.svg" alt="">
               </a>
-              <a href="https://www.facebook.com/braintree/">
+              <a target="_blank" href="https://www.facebook.com/braintree/">
                 <img src="img/icon-facebook.svg" alt="">
               </a>
-              <a href="https://github.com/braintree">
+              <a target="_blank" href="https://github.com/braintree">
                 <img src="img/icon-github.svg" alt="">
               </a>
-              <a href="https://dribbble.com/braintree">
+              <a target="_blank" href="https://dribbble.com/braintree">
                 <img src="img/icon-dribbble.svg" alt="">
               </a>
-              <a href="https://codepen.com/braintree">
+              <a target="_blank" href="https://codepen.com/braintree">
                 <img src="img/icon-codepen.svg" alt="">
               </a>
             </nav>
 
-            <small>© 2008 - 2017 Braintree, a division of PayPal, Inc. All rights reserved</small>
+            <small class="legal">Braintree is a service of PayPal, Inc. © 2008 - 2017 PayPal, Inc.
+        <a target="_blank" href="https://www.paypal.com/uk/webapps/mpp/ua/privacy-full">Privacy Policy</a> | <a target="_blank" href="https://www.braintreepayments.com/legal">Legal</a></small>
         </div>
     </footer>
 
