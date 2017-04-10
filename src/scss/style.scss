@@ -185,6 +185,10 @@ a {
   padding: 2rem;
   transition: .1s ease-in-out .1s;
 
+  .item__lang:not(:last-of-type):after {
+      content: ',';
+  }
+
   .item__content {
     transition: .1s ease-in-out .1s;
   }
