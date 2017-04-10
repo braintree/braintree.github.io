@@ -4,6 +4,7 @@ $heading-family: 'bt_mono', monospace;
 $body-family: 'AvenirNextLTW01-Regular', 'Avenir Next', 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, sans-serif;
 $max-width: 72.4305556%; // 1043px
 $light-grey: #E6E6E6;
+$dark-grey: #666666;
 $grey: #B3B3B3; // Screen Sizes
 $screen-large: 90rem;
 $screen-medium: 65.25rem;
@@ -244,7 +245,7 @@ a {
 
 footer {
   background: black;
-  color: #666666;
+  color: $dark-grey;
   padding: 2rem 0;
 
   .footer__content {
