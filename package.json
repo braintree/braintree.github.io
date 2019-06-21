@@ -27,6 +27,7 @@
     "metalsmith-data-loader": "^1.0.3",
     "metalsmith-in-place": "^2.0.1",
     "metalsmith-sass": "^1.4.0",
-    "metalsmith-templates": "^0.7.0"
+    "metalsmith-templates": "^0.7.0",
+    "rss-parser": "^3.7.1"
   }
 }
