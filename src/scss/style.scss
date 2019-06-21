@@ -332,3 +332,13 @@ footer {
     padding: 4px 10px;
   }
 }
+
+.hide-for-medium {
+  display: block;
+  visibility: visible;
+
+  @media only screen and (max-width: $screen-medium) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
