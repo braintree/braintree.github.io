@@ -14,10 +14,7 @@ console.log("Using REPO_LIST_FILE=" + repositoryListFileName);
 let parser = new Parser();
 
 async function getMediumFeed() {
-
   let feed = await parser.parseURL('https://medium.com/feed/braintree-product-technology');
-
-  console.log(feed);
 
   return feed.items.slice(0,4);
 }
@@ -87,5 +84,4 @@ fetchRepositoryData(repositoryListFileName).then(repositories => {
       if (err) throw err;
     });
   })
-})
-
+});
