@@ -54,32 +54,15 @@ a {
   padding-bottom: 2px;
   position: relative;
   text-decoration: none;
+
+  &:hover {
+    border-bottom-color: #1524D9;
+    color: #1524D9;
+  }
 }
 
-.link--knockout {
-  &:hover {
-    color: white;
-  }
-
-  &:after {
-    background: #000;
-    content: ' ';
-    height: 100%;
-    left: -0.5rem;
-    padding: 0.1875rem;
-    position: absolute;
-    top: -0.25rem;
-    transform: scale(0, 1);
-    transform-origin: right center;
-    width: 120%;
-    z-index: -1;
-  }
-
-  &:hover:after {
-    opacity: 1;
-    transform: scale(1,1);
-    transform-origin: left center;
-  }
+.container {
+  max-width: 1800px;
 }
 
 .header-main {
@@ -129,6 +112,7 @@ a {
   background: $light-grey;
   box-shadow: inset -6.75rem -11.25rem 0 0 white;
   padding: 4rem 0;
+  position: relative;
 
   @media(max-width: $screen-medium) {
     box-shadow: inset 0rem -11.25rem 0 0 white;
@@ -137,6 +121,42 @@ a {
   @media(max-width: $screen-small) {
     box-shadow: none;
     padding: 2rem 0;
+  }
+}
+
+.feature-more-link {
+  background-color: #ffffff;
+  border: 0.25rem solid;
+  border-radius: 100px;
+  box-shadow: 0.5rem 0.5rem 0 0 rgba(0,0,0,0.1);
+  display: inline-block;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  position: absolute;
+  right: 50px;
+  top: 40%;
+  width: 65px;
+  height: 65px;
+  transition: .1s ease-in-out .1s;
+
+  a {
+    border: none;
+    display: block;
+    padding-bottom: 0;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+    border-color: #1524D9;
+    transform: translate(0.25rem, 0.25rem);
+
+    .item__content {
+      transform: translate(-0.25rem, -0.25rem);
+    }
   }
 }
 
@@ -185,6 +205,10 @@ a {
   margin-right: 2rem;
   padding: 2rem;
   transition: .1s ease-in-out .1s;
+
+  h2 {
+    line-height: 100%;
+  }
 
   .item__lang:not(:last-of-type):after {
       content: ',';
@@ -290,5 +314,31 @@ footer {
   &:hover {
     background: black;
     color: white;
+  }
+}
+
+.tags {
+  list-style: none;
+  padding-left: 0;
+
+  .tag {
+    background-color: #202020;
+    border-radius: 0px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    padding: 4px 10px;
+  }
+}
+
+.hide-for-medium {
+  display: block;
+  visibility: visible;
+
+  @media only screen and (max-width: $screen-medium) {
+    display: none !important;
+    visibility: hidden !important;
   }
 }
