@@ -3,21 +3,12 @@ const inplace = require('metalsmith-in-place');
 const sass  = require('metalsmith-sass');
 const GitHubApi = require("github");
 const jsonfile = require("jsonfile");
-const Parser = require('rss-parser');
 
 const githubAuthFile = process.env.GH_AUTH_FILE || ".github_api_auth";
 const repositoryListFileName = process.env.REPO_LIST_FILE || "repository-list.json"
 
 console.log("Using GH_AUTH_FILE=" + githubAuthFile);
 console.log("Using REPO_LIST_FILE=" + repositoryListFileName);
-
-let parser = new Parser();
-
-async function getMediumFeed() {
-  let feed = await parser.parseURL('https://medium.com/feed/braintree-product-technology');
-
-  return feed.items.slice(0,4);
-}
 
 var github = new GitHubApi({
   headers: {
@@ -67,21 +58,18 @@ async function fetchRepositoryData(filename) {
 fetchRepositoryData(repositoryListFileName).then(repositories => {
   console.log("Updated " + repositories.length + " repositories");
 
-  getMediumFeed().then(posts => {
-    Metalsmith(__dirname)
-    .metadata({
-      repositories: repositories,
-      posts: posts
-    })
-    .source('./src')
-    .destination('.')
-    .clean(false)
-    .use(sass({
-      outputDir: 'css/'
-    }))
-    .use(inplace())
-    .build(function(err) {
-      if (err) throw err;
-    });
+  Metalsmith(__dirname)
+  .metadata({
+    repositories: repositories
   })
+  .source('./src')
+  .destination('.')
+  .clean(false)
+  .use(sass({
+    outputDir: 'css/'
+  }))
+  .use(inplace())
+  .build(function(err) {
+    if (err) throw err;
+  });
 });
